@@ -1,9 +1,9 @@
 CROSS_COMPILE =
 CC = gcc
 CC := $(CROSS_COMPILE)$(CC)
-CXX = g++
-CXX := $(CROSS_COMPILE)$(CXX)
-LDFLAGS = -Wl,--enable-stdcall-fixup
+CFLAGS = $(EXTRACFLAGS)
+CPPFLAGS = $(EXTRACPPFLAGS)
+LDFLAGS = -Wl,--enable-stdcall-fixup $(EXTRALDFLAGS)
 OBJDUMP = objdump
 OBJDUMP := $(CROSS_COMPILE)$(OBJDUMP)
 
