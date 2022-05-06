@@ -20,10 +20,7 @@ done
 shift $(($OPTIND - 1))
 [ $# -ge 1 ] || usage
 dllfile="$1"; shift
-extrasyms=
-for sym; do
-	extrasyms="$(printf "%s\n%s" "$sym" "$extrasyms")"
-done
+extrasyms="$(printf "%s\n" "$@")"
 objdump="${OBJDUMP:-${CROSS_COMPILE}objdump}"
 
 
@@ -39,7 +36,7 @@ get_exports() {
 }
 
 max() {
-	for x; do printf "%d\n" "$x"; done | sort -rn | head -n 1
+	printf "%d\n" "$@" | sort -rn | head -n 1
 }
 
 
