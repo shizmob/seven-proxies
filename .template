@@ -1,0 +1,13 @@
+#define _WIN32_LEAN_AND_MEAN
+#include <windows.h>
+
+
+BOOL WINAPI DllMain(HMODULE hinstDLL, DWORD fdwReason, LPVOID lpvReserved)
+{
+    switch (fdwReason) {
+    case DLL_PROCESS_ATTACH:
+        /* do stuff here! */
+        break;
+    }
+    return TRUE;
+}
